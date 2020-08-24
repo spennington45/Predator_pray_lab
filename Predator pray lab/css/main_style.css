@@ -9,9 +9,10 @@ body {
 
 .Images {
   height: auto;
-  width: 75%;
+  width: auto;
   align-self: center;
   border-style: solid;
+  z-index: -1;
 }
 
 h1 {
@@ -20,6 +21,11 @@ h1 {
   color: Blue;
 }
 
+h2 {
+  color: #FFF;
+  text-rendering: optimizeLegibility;
+  opacity: 100%;
+}
 
 button {
   margin: 20px;
@@ -27,4 +33,33 @@ button {
   text-align: center;
   color: black;
   padding: 15px;
+}
+
+.grid-container1 {
+  height: 100px;
+  width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background: blue;
+  margin-bottom: -100px;
+  z-index: 10;
+  opacity: 50%
+}
+
+
+.left_banner {
+  text-align: left;
+  opacity: 0%
+  color white;
+  z-index: 11
+}
+
+.middle_banner {
+  text-align: center;
+}
+
+.right_banner {
+  text-align: right;
 }
