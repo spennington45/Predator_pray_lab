@@ -1,6 +1,10 @@
 /* CSS Main Style Sheet for the Pill bug lab */
 /* Author Mark Bromwich and Steven Pennington      Date 3 July 2020  */
 
+:root {
+	--clamOpacity: 100%;
+}
+
 body {
 	margin: 30px 0px;
 	background-color: white;
@@ -45,15 +49,26 @@ button {
   background: blue;
   margin-bottom: -100px;
   z-index: 10;
-  opacity: 50%
+  opacity: 50%;
 }
 
+.clam {
+  z-index: 5;
+  opacity: 100%;
+  opacity: var(--clamOpacity);
+}
 
 .left_banner {
   text-align: left;
   opacity: 0%
   color white;
   z-index: 11
+}
+
+.canvas {
+  width: 1024px;
+  height: 1000px;
+  border: 15px solid: black;
 }
 
 .middle_banner {

@@ -8,6 +8,7 @@
 
   <script src="js/jquery_3_5_1.js"></script>
   <script src="js/REPLACE ME.js"></script>
+  <script src="js/button_script.js"></script>
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main_style.css">
@@ -20,20 +21,23 @@
   <div class="">
     <div id="div_top" class="grid-container1">
       <div id="left_banner">
-        <h2>Clams caught X</h2>
+        <h2>Clams caught <span id="count">0</span></h2>
       </div>
       <div id="middle_banner">
-        <h2>Round X</h2>
+        <h2>Round <span id="round">0</span></h2>
       </div>
       <div id="right_banner">
-        <h2>Time remaining X</h2>
+        <h2>Time remaining <span id="time">0</span></h2>
       </div>
     </div>
-    <div class="">
+    <div id="huntingGrounds" class="">
       <img id="Images" src="Images/seabed01.jpg" alt="Hunting grounds">
     </div>
   </div>>
   <div class="">
+    <input type="image" src="Images\clamshell03.jpg" class="clam" id="clam1" />
+    <input type="image" src="Images\clamshell03.jpg" class="clam" id="clam2" />
+    <img src="Images\clamshell03.psd" alt="clam">
     <button id="instructions" class="button">Instructions</button>
     <button id="startHunting" class="button">Start Hunting</button>
   </div>
