@@ -8,7 +8,6 @@
 
   <script src="js/jquery_3_5_1.js"></script>
   <script src="js/jquery_ui.js"></script>
-  <script src="js/button_script.js"></script>
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main_style.css">
@@ -31,7 +30,7 @@
       </div>
     </div>
     <div id="huntingGroundsDiv" class="">
-        <canvas id="huntingGroundsCanvas" style="height: 1026px; width: 1026px; border: 1px solid #000; z-index: -5" class="canvas"></canvas>
+        <canvas id="huntingGroundsCanvas" style="height: 1026px; width: 1026px; border: 1px solid #000;"></canvas>
     </div>
   </div>>
   <div class="">
@@ -42,8 +41,12 @@
     <button id="instructions" class="button">Instructions</button>
     <button id="startHunting" class="button">Start Hunting</button>
   </div>
-  <div id="dialog" title="Basic dialog">
-  <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+  <div id="dialog1" class="dialog1" title="Instructions">
+  <p>Do something here bla bla bla</p>
   </div>
+  <div id="dialog2" class="dialog2" title="Results">
+  <p id="dailog2text">REPLACE ME!</p>
+  </div>
+  <script src="js/button_script.js"></script>
 </body>
 </html>

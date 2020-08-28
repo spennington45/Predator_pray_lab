@@ -18,29 +18,36 @@ $(document).ready(function() {
   let results = [];
   let re = new RegExp('1234567890');
   let huntingGrounds = '<img id="Images" src="Images/seabed01.jpg" alt="Hunting grounds">';
+  let resultsOutput = "Results <br> Round 1" + results[0] + "<br> Round 2" + results[1] + "<br> Round 3" + results[2];
 
 
   window.onload = loadDeplay();
   //
   //
   function loadDeplay() {
-    // document.getElementById("seabed").style.display = "none";
+    document.getElementById("seabed").style.display = "none";
     // xpos = Math.floor(Math.random(300) * 250);
     // ypos = Math.floor(Math.random(300) * 100);
-
+    $("#dialog1").dialog({
+      autoOpen: false
+    });
+    $("#dialog2").dialog({
+      autoOpen: false
+    });
     let canvas = document.getElementById('huntingGroundsCanvas');
     let ctx = canvas.getContext('2d');
     let img = document.getElementById("seabed");
+    // const img = document.createElement('img');
+    // img.src='Image/seabed01.jpg';
+    ctx.drawImage(img, 0, 0, 300, 150);
 
-    ctx.drawImage(img, 1, 1, 1024, 1024);
-  };
+  }
 
   $("#instructions").on("click", function() {
-    $( "#dialog-confirm" ).dialog("open")({
+    $( "#dialog1" ).dialog("open")({
       resizable: false,
-      height: "auto",
-      width: "auto",
-      modal: true
+      modal: true,
+      dialogClass: "dialog"
     });
   });
 
@@ -48,7 +55,11 @@ $(document).ready(function() {
     count = 0
     document.getElementById("count").innerHTML = count;
     if (round == 3) {
-      // Desplay results
+      $( "#dialog2" ).dialog("open")({
+        resizable: false,
+        modal: true,
+        dialogClass: "dialog"
+      });
     }
     if (round < 3) {
       document.getElementById("startHunting").disabled = true;
@@ -60,6 +71,14 @@ $(document).ready(function() {
           document.getElementById("time").innerHTML = time;
           document.getElementById("startHunting").disabled = false;
           results.add(count);
+          if (round == 3) {
+            document.getElementById("dailog2text").innerHTML = resultsOutput;
+            $( "#dialog2" ).dialog("open")({
+              resizable: false,
+              modal: true,
+              dialogClass: "dialog"
+            });
+          }
           clearInterval(timer);
         } else {
           document.getElementById("time").innerHTML = time;
@@ -68,11 +87,11 @@ $(document).ready(function() {
       }, 1000);
     }
     if (round == 1) {
-      document.getElementById("huntingGrounds").innerHTML = huntingGrounds;
-      let clamImage = document.getElementById("canvas").innerHTML = clam;
-      for (let i = 0; i < 20; i++) {
-        clamImage;
-      }
+      // document.getElementById("huntingGrounds").innerHTML = huntingGrounds;
+      // let clamImage = document.getElementById("canvas").innerHTML = clam;
+      // for (let i = 0; i < 20; i++) {
+      //   clamImage;
+      // }
     } else if (round == 2) {
       // Draw clams that are hard to see
     } else if (round == 3) {

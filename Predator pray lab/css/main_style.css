@@ -52,6 +52,28 @@ button {
   opacity: 50%;
 }
 
+.ui-dialog.ui-widget-content {
+  padding: 3px;
+  height: auto;
+  width: auto;
+  border: 15px solid: black;
+  background: lightgray;
+}
+
+.ui-widget-header {
+    height: auto;
+    padding: 0;
+    background: black;
+    text-align: center;
+    border: 2;
+    color: #fff;
+}
+
+.ui-dialog-titlebar-close {
+  background-color: lightgray;
+  padding: 3;
+}
+
 .clam {
   z-index: 5;
   opacity: 100%;
