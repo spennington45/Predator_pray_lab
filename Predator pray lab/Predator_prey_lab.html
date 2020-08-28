@@ -7,7 +7,7 @@
   <title>Predator pray lab</title>
 
   <script src="js/jquery_3_5_1.js"></script>
-  <script src="js/REPLACE ME.js"></script>
+  <script src="js/jquery_ui.js"></script>
   <script src="js/button_script.js"></script>
 
   <link rel="stylesheet" href="css/normalize.css">
@@ -30,16 +30,20 @@
         <h2>Time remaining <span id="time">0</span></h2>
       </div>
     </div>
-    <div id="huntingGrounds" class="">
-      <img id="Images" src="Images/seabed01.jpg" alt="Hunting grounds">
+    <div id="huntingGroundsDiv" class="">
+        <canvas id="huntingGroundsCanvas" style="height: 1026px; width: 1026px; border: 1px solid #000; z-index: -5" class="canvas"></canvas>
     </div>
   </div>>
   <div class="">
     <input type="image" src="Images\clamshell03.jpg" class="clam" id="clam1" />
     <input type="image" src="Images\clamshell03.jpg" class="clam" id="clam2" />
+    <img id="seabed" class="Images" src="Images/seabed01.jpg" alt="Hunting grounds">
     <img src="Images\clamshell03.psd" alt="clam">
     <button id="instructions" class="button">Instructions</button>
     <button id="startHunting" class="button">Start Hunting</button>
+  </div>
+  <div id="dialog" title="Basic dialog">
+  <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
   </div>
 </body>
 </html>

@@ -20,16 +20,28 @@ $(document).ready(function() {
   let huntingGrounds = '<img id="Images" src="Images/seabed01.jpg" alt="Hunting grounds">';
 
 
-  // window.onload = loadDeplay();
+  window.onload = loadDeplay();
   //
   //
-  // function loadDeplay() {
-  //  desplay image before expirement starts optional
-  // };
+  function loadDeplay() {
+    // document.getElementById("seabed").style.display = "none";
+    // xpos = Math.floor(Math.random(300) * 250);
+    // ypos = Math.floor(Math.random(300) * 100);
+
+    let canvas = document.getElementById('huntingGroundsCanvas');
+    let ctx = canvas.getContext('2d');
+    let img = document.getElementById("seabed");
+
+    ctx.drawImage(img, 1, 1, 1024, 1024);
+  };
 
   $("#instructions").on("click", function() {
-    alert("Say something");
-    // Desplay information
+    $( "#dialog-confirm" ).dialog("open")({
+      resizable: false,
+      height: "auto",
+      width: "auto",
+      modal: true
+    });
   });
 
   $("#startHunting").on("click", function() {
