@@ -4,10 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Predator pray lab</title>
-
-  <script src="js/jquery_3_5_1.js"></script>
-  <script src="js/jquery_ui.js"></script>
+  <title>Predator prey lab</title>
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main_style.css">
@@ -30,14 +27,12 @@
       </div>
     </div>
     <div id="huntingGroundsDiv" class="">
-        <canvas id="huntingGroundsCanvas" style="height: 1026px; width: 1026px; border: 1px solid #000;"></canvas>
+        <canvas id="huntingGroundsCanvas" style="height: 694; width: 1026px; border: 1px solid #000;"></canvas>
     </div>
   </div>>
   <div class="">
-    <input type="image" src="Images\clamshell03.jpg" class="clam" id="clam1" />
-    <input type="image" src="Images\clamshell03.jpg" class="clam" id="clam2" />
     <img id="seabed" class="Images" src="Images/seabed01.jpg" alt="Hunting grounds">
-    <img src="Images\clamshell03.psd" alt="clam">
+    <input type="image" src="Images\clamshell03.jpg" class="clam" id="clamImage" />
     <button id="instructions" class="button">Instructions</button>
     <button id="startHunting" class="button">Start Hunting</button>
   </div>
@@ -47,6 +42,8 @@
   <div id="dialog2" class="dialog2" title="Results">
   <p id="dailog2text">REPLACE ME!</p>
   </div>
+  <script src="js/jquery_3_5_1.js"></script>
+  <script src="js/jquery_ui.js"></script>
   <script src="js/button_script.js"></script>
 </body>
 </html>

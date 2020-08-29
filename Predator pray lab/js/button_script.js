@@ -14,11 +14,11 @@ $(document).ready(function() {
   let count = 0;
   let time = 0;
   let clamNumber = 1;
-  let clma = '<input type="image" src="Images/clamshell03.jpg" class="clam'+ clamNumber + '" id="clamButton" />'
+  let clam = '<input type="image" src="Images/clamshell03.jpg" style="position: absolute; top:200px; left:20px class="clam'+ clamNumber + '" id="clamButton" />'
   let results = [];
   let re = new RegExp('1234567890');
   let huntingGrounds = '<img id="Images" src="Images/seabed01.jpg" alt="Hunting grounds">';
-  let resultsOutput = "Results <br> Round 1" + results[0] + "<br> Round 2" + results[1] + "<br> Round 3" + results[2];
+  let resultsOutput = "Results <br> Round 1 " + results[0] + " clamss <br> Round 2 " + results[1] + " clams <br> Round 3 " + results[2] + " clams";
 
 
   window.onload = loadDeplay();
@@ -53,6 +53,7 @@ $(document).ready(function() {
 
   $("#startHunting").on("click", function() {
     count = 0
+    clamNumber = 0;
     document.getElementById("count").innerHTML = count;
     if (round == 3) {
       $( "#dialog2" ).dialog("open")({
@@ -70,15 +71,16 @@ $(document).ready(function() {
         if(time <= 0){
           document.getElementById("time").innerHTML = time;
           document.getElementById("startHunting").disabled = false;
-          results.add(count);
-          if (round == 3) {
-            document.getElementById("dailog2text").innerHTML = resultsOutput;
-            $( "#dialog2" ).dialog("open")({
-              resizable: false,
-              modal: true,
-              dialogClass: "dialog"
-            });
-          }
+          results.push(this.count);
+          document.getElementById("dailog2text").innerHTML = resultsOutput;
+          // if (round == 3) {
+          //   document.getElementById("dailog2text").innerHTML = resultsOutput;
+          //   $( "#dialog2" ).dialog("open")({
+          //     resizable: false,
+          //     modal: true,
+          //     dialogClass: "dialog"
+          //   });
+          // }
           clearInterval(timer);
         } else {
           document.getElementById("time").innerHTML = time;
@@ -87,13 +89,25 @@ $(document).ready(function() {
       }, 1000);
     }
     if (round == 1) {
-      // document.getElementById("huntingGrounds").innerHTML = huntingGrounds;
-      // let clamImage = document.getElementById("canvas").innerHTML = clam;
-      // for (let i = 0; i < 20; i++) {
-      //   clamImage;
-      // }
+      xpos = Math.floor(Math.random(1000) * 250);
+      ypos = Math.floor(Math.random(1000) * 100);
+      xdem = Math.floor(Math.random(30));
+      ydem = Math.floor(Math.random(30));
+      let canvas = document.getElementById('huntingGroundsCanvas');
+      let ctx = canvas.getContext('2D');
+      let img = document.getElementById("#clamImage");
+      for (let i = 0; i < 20; i++) {
+            ctx.drawImage(img, xpos, ypos, xdem, ydem);
+      }
     } else if (round == 2) {
-      // Draw clams that are hard to see
+      document.getElementById("huntingGroundsDiv").innerHTML = huntingGrounds;
+      for (let i = 0; i < 20; i++) {
+        xpos = Math.floor(Math.random(1000) * 1000);
+        ypos = Math.floor(Math.random(600) * 600);
+        clamNumber += 1;
+        clam = '<input type="image" src="Images/clamshell03.jpg" style="position: absolute; top:' + xpos +'px; left:' + ypos + 'px class="clam" id="clam' + clamNumber + '" />';
+        document.getElementById("huntingGroundsDiv").innerHTML += clam;
+      }
     } else if (round == 3) {
       // Draw clams that are easy to see
       document.getElementById("startHunting").innerHTML = "Results"

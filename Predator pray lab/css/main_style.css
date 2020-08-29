@@ -12,11 +12,12 @@ body {
 }
 
 .Images {
+	position: fixed;
   height: auto;
   width: auto;
   align-self: center;
   border-style: solid;
-  z-index: -1;
+  z-index: 0;
 }
 
 h1 {
@@ -75,6 +76,7 @@ button {
 }
 
 .clam {
+	position: relative;
   z-index: 5;
   opacity: 100%;
   opacity: var(--clamOpacity);
