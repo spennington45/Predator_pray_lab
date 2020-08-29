@@ -89,10 +89,10 @@ $(document).ready(function() {
       }, 1000);
     }
     if (round == 1) {
-      xpos = Math.floor(Math.random(1000) * 250);
-      ypos = Math.floor(Math.random(1000) * 100);
-      xdem = Math.floor(Math.random(30));
-      ydem = Math.floor(Math.random(30));
+      let xpos = Math.floor(Math.random(1000) * 250);
+      let ypos = Math.floor(Math.random(1000) * 100);
+      let xdem = Math.floor(Math.random(30));
+      let ydem = Math.floor(Math.random(30));
       let canvas = document.getElementById('huntingGroundsCanvas');
       let ctx = canvas.getContext('2D');
       let img = document.getElementById("#clamImage");
