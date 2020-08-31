@@ -26,6 +26,7 @@ $(document).ready(function() {
   //
   function loadDeplay() {
     document.getElementById("seabed").style.display = "none";
+    document.getElementById("clamImage").style.display = "none";
     // xpos = Math.floor(Math.random(300) * 250);
     // ypos = Math.floor(Math.random(300) * 100);
     $("#dialog1").dialog({
@@ -95,7 +96,7 @@ $(document).ready(function() {
       let ydem = Math.floor(Math.random(30));
       let canvas = document.getElementById('huntingGroundsCanvas');
       let ctx = canvas.getContext('2D');
-      let img = document.getElementById("#clamImage");
+      let img = document.getElementById("clamImage");
       for (let i = 0; i < 20; i++) {
             ctx.drawImage(img, xpos, ypos, xdem, ydem);
       }
